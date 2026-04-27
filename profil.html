@@ -6,44 +6,140 @@
     <title>Profil Fasilitator - USBD PAI DIY 2026</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Gaya khusus untuk foto tanpa bingkai agar menyatu dengan latar */
-        .kartu-foto {
-            background: transparent !important;
-            box-shadow: none !important;
-            border: none !important;
+        /* Pengaturan Khusus Foto Transparan & Layout Profil */
+        .grid-profil {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 4rem;
+            align-items: center;
+            height: 100%;
+        }
+
+        .kartu-identitas {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end; /* Membuat foto seolah berdiri di atas navigasi */
+            justify-content: center;
+            height: 100%;
+            text-align: center;
         }
 
-        .wadah-foto-transparan {
+        .wadah-foto-utama {
             width: 100%;
-            max-width: 400px; /* Ukuran maksimal foto */
-            height: auto;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); /* Bayangan mengikuti siluet tubuh */
+            /* Mengunci tinggi agar pas di layar proyektor tanpa scroll */
+            height: 55vh; 
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
 
-        .wadah-foto-transparan img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .wadah-foto-utama img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            /* Efek bayangan mengikuti bentuk tubuh */
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+        }
+
+        .detail-teks-profil {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 2rem;
         }
 
         .nama-profil {
             font-size: 2.2rem;
-            margin-top: 1.5rem;
-            text-align: center;
+            font-weight: 800;
+            color: var(--teks-primer);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
-        .tagline-profil {
+        .label-instansi {
+            display: inline-block;
             background: var(--warna-utama);
             color: white;
-            padding: 0.5rem 1.2rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 50px;
-            font-size: 1rem;
-            margin: 1rem 0;
-            display: inline-block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .kontak-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--teks-sekunder);
+            font-weight: 500;
+            justify-content: center;
+        }
+
+        /* Penyesuaian Sesi Kanan */
+        .blok-biografi {
+            margin-bottom: 2rem;
+        }
+
+        .blok-biografi:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .list-profil {
+            list-style: none;
+            margin-top: 0.8rem;
+        }
+
+        .list-profil li {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .list-profil li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--aksen-warna);
+            font-weight: bold;
+        }
+
+        .tahun-label {
+            color: var(--teks-sekunder);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .motto-box {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--warna-utama), #0369a1);
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .motto-box p {
+            font-size: 1.25rem;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .motto-box::after {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            color: rgba(255,255,255,0.1);
+            font-family: serif;
         }
     </style>
 </head>
@@ -52,47 +148,49 @@
         <div class="area-salindia aktif">
             <div class="grid-profil">
                 
-                <div class="kartu-foto">
-    <img src="https://lh3.googleusercontent.com/d/1e3uzSbtHQbtgvM9zruz4sOa9eGgR-4-C" alt="Ardika Riski Rahmawan, S.Pd.">
-</div>
-                    <h1 class="nama-profil">Ardika Riski Rahmawan, S.Pd.</h1>
-                    <div class="tagline-profil">Guru PAI SD Negeri 1 Godegan</div>
-                    
-                    <div class="kontak-mini">
-                        <svg class="ikon-kecil" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"></path></svg>
-                        <span>ardika.riski@gmail.com</span>
+                <div class="kartu-identitas">
+                    <div class="wadah-foto-utama">
+                        <img src="https://drive.google.com/uc?export=view&id=1e3uzSbtHQbtgvM9zruz4sOa9eGgR-4-C" alt="Ardika Riski Rahmawan, S.Pd.">
+                    </div>
+                    <div class="identitas-visual">
+                        <h1 class="nama-profil">Ardika Riski Rahmawan, S.Pd.</h1>
+                        <div class="label-instansi">Guru PAI SD Negeri 1 Godegan</div>
+                        <div class="kontak-wrapper">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"></path></svg>
+                            <span>ardika.riski@gmail.com</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="konten-detail">
+                <div class="detail-teks-profil">
                     
-                    <section class="blok-info">
+                    <section class="blok-biografi">
                         <div class="label-kategori">Unit Kerja</div>
-                        <ul class="daftar-minimalis">
-                            <li><strong>SD Negeri 1 Godegan</strong>, Srandakan <span class="tahun">(2021 - Sekarang)</span></li>
-                            <li><strong>SD Negeri Klagaran</strong>, Sanden <span class="tahun">(2019 - 2021)</span></li>
+                        <ul class="list-profil">
+                            <li><strong>SD Negeri 1 Godegan</strong>, Srandakan <span class="tahun-label">(2021 - Sekarang)</span></li>
+                            <li><strong>SD Negeri Klagaran</strong>, Sanden <span class="tahun-label">(2019 - 2021)</span></li>
                         </ul>
                     </section>
 
-                    <section class="blok-info">
-                        <div class="label-kategori">Kontribusi Strategis</div>
-                        <ul class="daftar-minimalis">
+                    <section class="blok-biografi">
+                        <div class="label-kategori">Pengalaman Strategis</div>
+                        <ul class="list-profil">
                             <li>Ketua Tim Pengembang Kurikulum SD Negeri 1 Godegan</li>
                             <li>Tim Pengembang Kisi-Kisi dan Soal USBD PAI DIY</li>
                         </ul>
                     </section>
 
-                    <section class="blok-info">
+                    <section class="blok-biografi">
                         <div class="label-kategori">Organisasi & Amanah</div>
-                        <ul class="daftar-minimalis">
-                            <li><strong>Sekretaris 2</strong> KKG PAI Kabupaten Bantul <span class="tahun">(2025 - Sekarang)</span></li>
-                            <li><strong>Ketua</strong> KKG PAI Kapanewon Srandakan <span class="tahun">(2021 - Sekarang)</span></li>
-                            <li>Anggota Seksi Kegiatan dan Sosial KKG PAI Bantul <span class="tahun">(2021 - 2025)</span></li>
+                        <ul class="list-profil">
+                            <li><strong>Sekretaris 2</strong> KKG PAI Kabupaten Bantul <span class="tahun-label">(2025 - Sekarang)</span></li>
+                            <li><strong>Ketua</strong> KKG PAI Kapanewon Srandakan <span class="tahun-label">(2021 - Sekarang)</span></li>
+                            <li>Anggota Seksi Kegiatan dan Sosial KKG PAI Bantul <span class="tahun-label">(2021 - 2025)</span></li>
                         </ul>
                     </section>
 
-                    <div class="kartu-motto">
-                        <p>"Mendedikasikan diri untuk pendidikan agama yang relevan dan mencerahkan."</p>
+                    <div class="motto-box">
+                        <p>"Berbagi inspirasi melalui digitalisasi untuk mewujudkan generasi islami yang adaptif dan bermakna."</p>
                     </div>
                 </div>
 
@@ -101,7 +199,7 @@
 
         <nav class="kendali-presentasi">
             <a href="index.html" class="tombol-menu">
-                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 Kembali ke Menu Utama
             </a>
         </nav>
