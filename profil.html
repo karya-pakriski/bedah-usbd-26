@@ -6,11 +6,11 @@
     <title>Profil Fasilitator - USBD PAI DIY 2026</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- TATA LETAK DUA KOLOM (DARK SIDEBAR) --- */
+        /* --- TATA LETAK DUA KOLOM PROFESIONAL --- */
         
         .layar-presentasi {
             height: 90vh;
-            padding: 0; /* Menghilangkan padding agar sidebar menempel */
+            padding: 0;
             overflow: hidden;
             background: var(--putih-bersih);
             border-radius: 24px;
@@ -20,26 +20,26 @@
 
         .grid-profil {
             display: grid;
-            grid-template-columns: 35% 65%; /* Kolom kiri lebih ramping */
+            grid-template-columns: 32% 68%; /* Proporsi sidebar lebih ramping */
             flex: 1;
             min-height: 0;
         }
 
-        /* --- KOLOM KIRI (GELAP) --- */
+        /* --- SIDEBAR KIRI (GELAP) --- */
         .sidebar-gelap {
-            background-color: #0f172a; /* Biru dongker sangat gelap */
+            background-color: #0f172a;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 2.5rem;
             text-align: center;
         }
 
         .wadah-foto-profil {
             width: 100%;
-            height: 45vh;
+            height: 42vh; /* Ketinggian foto disesuaikan agar proporsional */
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -50,39 +50,50 @@
             height: 100%;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
         }
 
-        .nama-profil-kecil {
-            font-size: 1.6rem; /* Nama lebih kecil & proporsional */
+        .identitas-sidebar {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Menyelaraskan teks ke tengah */
+        }
+
+        .nama-profil-minimalis {
+            font-size: 1.35rem; /* Ukuran nama diperkecil sesuai permintaan */
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: white;
-            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            color: #f1f5f9;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
         }
 
-        .label-jabatan-sidebar {
-            font-size: 0.9rem;
-            background: var(--aksen-warna);
-            color: white;
-            padding: 0.3rem 1rem;
+        .label-jabatan-kecil {
+            font-size: 0.85rem;
+            background: rgba(14, 165, 233, 0.2); /* Biru aksen transparan */
+            color: var(--aksen-warna);
+            border: 1px solid var(--aksen-warna);
+            padding: 0.3rem 0.8rem;
             border-radius: 50px;
             display: inline-block;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-weight: 600;
         }
 
-        .kontak-sidebar {
+        .kontak-sidebar-tengah {
             font-size: 0.85rem;
             color: #94a3b8;
             display: flex;
             align-items: center;
+            justify-content: center; /* Rata tengah untuk email */
             gap: 0.5rem;
+            width: 100%;
         }
 
         /* --- KOLOM KANAN (TERANG) --- */
         .konten-utama-profil {
-            padding: 4rem;
+            padding: 4rem 5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -92,26 +103,45 @@
             margin-bottom: 2.5rem;
         }
 
-        .list-profil li {
-            font-size: 1.2rem;
+        .label-kategori {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--warna-utama);
+            font-weight: 800;
             margin-bottom: 0.8rem;
+            text-transform: uppercase;
         }
 
-        /* --- NAVIGASI BAWAH --- */
+        .list-profil li {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--teks-primer);
+            line-height: 1.5;
+        }
+
+        /* --- NAVIGASI STABIL --- */
         .kendali-presentasi {
             background: #f8fafc;
-            padding: 1.5rem 3rem;
+            padding: 1.2rem 3rem;
             border-top: 1px solid #e2e8f0;
-            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .tombol-menu-home {
+        .tombol-kembali-home {
             text-decoration: none;
-            color: var(--warna-utama);
+            color: var(--teks-sekunder);
             font-weight: 700;
+            font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            transition: color 0.2s;
+        }
+
+        .tombol-kembali-home:hover {
+            color: var(--warna-utama);
         }
     </style>
 </head>
@@ -121,13 +151,15 @@
             
             <aside class="sidebar-gelap">
                 <div class="wadah-foto-profil">
-                    <img src="https://drive.google.com/thumbnail?id=1XVq_ELHkBfOUlBhQQlDQKQUp41ruYDDQ&sz=w1000" alt="Ardika Riski Rahmawan, S.Pd.">
+                    <img src="https://drive.google.com/thumbnail?id=1C66v9dP6DfDbAWBLpcYeUHItgiRyOPXY&sz=w1000" alt="Ardika Riski Rahmawan, S.Pd.">
                 </div>
+                
                 <div class="identitas-sidebar">
-                    <h1 class="nama-profil-kecil">Ardika Riski Rahmawan, S.Pd.</h1>
-                    <div class="label-jabatan-sidebar">Guru PAI SDN 1 Godegan</div>
-                    <div class="kontak-sidebar">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <h1 class="nama-profil-minimalis">Ardika Riski Rahmawan, S.Pd.</h1>
+                    <div class="label-jabatan-kecil">Guru PAI SDN 1 Godegan</div>
+                    
+                    <div class="kontak-sidebar-tengah">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"></path></svg>
                         <span>ardika.riski@gmail.com</span>
                     </div>
                 </div>
@@ -162,10 +194,13 @@
         </div>
 
         <nav class="kendali-presentasi">
-            <a href="index.html" class="tombol-menu-home">
+            <a href="index.html" class="tombol-kembali-home">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 Kembali ke Menu Utama
             </a>
+            <div style="visibility: hidden;">
+                <button class="tombol-arah">Selanjutnya</button>
+            </div>
         </nav>
     </main>
 </body>
