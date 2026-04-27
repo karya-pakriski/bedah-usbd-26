@@ -1,10 +1,21 @@
-/* --- PENGATURAN GLOBAL & KUNCI LAYAR PENUH --- */
+/* --- KONFIGURASI VARIABEL & FONT --- */
 :root {
-    --latar-utama: #f8fafc; /* Abu-abu kebiruan sangat terang, bersih & sejuk */
-    --teks-primer: #0f172a; /* Biru dongker pekat untuk keterbacaan tinggi */
-    --teks-sekunder: #64748b;
-    --aksen-warna: #0ea5e9; /* Biru langit modern */
+    /* Palet Warna Utama - Profesional & Cerah */
+    --warna-utama: #0369a1;      /* Biru Samudra Dalam */
+    --warna-aksen: #0ea5e9;      /* Biru Langit Modern */
+    --warna-sukses: #10b981;     /* Hijau Emerald (untuk Trik/Solusi) */
+    --warna-peringatan: #f59e0b;  /* Oranye (untuk Level HOTS) */
+    
+    /* Warna Dasar */
+    --latar-utama: #f8fafc;      /* Abu-abu kebiruan sangat terang */
     --putih-bersih: #ffffff;
+    --teks-primer: #0f172a;      /* Biru dongker pekat */
+    --teks-sekunder: #64748b;    /* Slate/Abu-abu sedang */
+    
+    /* Efek & Transisi */
+    --bayangan-halus: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --bayangan-tegas: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --transisi: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -14,28 +25,29 @@
 }
 
 body, html {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--latar-utama);
     color: var(--teks-primer);
     width: 100%;
-    height: 100vh; /* Mengunci tinggi tepat 100% layar */
-    overflow: hidden; /* Mematikan fungsi scroll secara total */
+    height: 100vh;
+    overflow: hidden; /* Mencegah scrolling agar fokus pada 1 layar */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* --- WADAH PRESENTASI --- */
+/* --- WADAH UTAMA (CONTAINER) --- */
 .layar-presentasi {
-    width: 90%;
-    max-width: 1400px;
-    height: 90vh;
+    width: 95%;
+    max-width: 1500px;
+    height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1rem;
 }
 
-/* --- KOP / HEADER --- */
+/* --- KEPALA HALAMAN (HEADER) --- */
 .kop-presentasi {
     text-align: left;
     margin-bottom: 2rem;
@@ -44,104 +56,95 @@ body, html {
 }
 
 .kop-presentasi h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -0.025em;
+    color: var(--warna-utama);
     margin-bottom: 0.5rem;
-    color: var(--teks-primer);
 }
 
 .kop-presentasi p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--teks-sekunder);
     font-weight: 500;
 }
 
-/* --- PAPAN NAVIGASI (GRID 3 KOLOM) --- */
+/* --- NAVIGASI MENU UTAMA (INDEX) --- */
 .papan-navigasi {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2.5rem;
     flex-grow: 1;
+    align-items: start;
 }
 
 .kolom-menu {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .label-kategori {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.1em;
     color: var(--teks-sekunder);
     font-weight: 700;
     margin-bottom: 0.5rem;
+    border-left: 3px solid var(--warna-aksen);
+    padding-left: 10px;
 }
 
-/* --- DESAIN MENU MINIMALIS & MELAYANG --- */
 .item-menu {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: inherit;
     padding: 1.5rem;
-    border-radius: 16px;
-    background: transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Efek saat disorot kursor (Hover) */
-.item-menu:hover {
+    border-radius: 20px;
     background: var(--putih-bersih);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
-    transform: translateY(-4px);
+    border: 1px solid #e2e8f0;
+    transition: var(--transisi);
 }
 
-.item-menu:hover .ikon-menu {
-    color: var(--aksen-warna);
-    transform: scale(1.1);
+.item-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bayangan-tegas);
+    border-color: var(--warna-aksen);
 }
 
-/* --- IKON & TIPOGRAFI TEKS MENU --- */
 .ikon-menu {
-    width: 48px;
-    height: 48px;
-    color: var(--teks-sekunder);
+    width: 44px;
+    height: 44px;
+    color: var(--warna-aksen);
     margin-right: 1.5rem;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.teks-menu {
-    display: flex;
-    flex-direction: column;
+    transition: var(--transisi);
 }
 
 .teks-menu h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.2rem;
 }
 
 .teks-menu p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--teks-sekunder);
 }
-/* --- TATA LETAK SALINDIA PRESENTASI --- */
+
+/* --- TAMPILAN SALINDIA (SLIDES) --- */
 .area-salindia {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    width: 100%;
 }
 
 .salindia {
     display: none;
     width: 100%;
-    animation: munculHalus 0.4s ease-out forwards;
+    animation: munculHalus 0.5s ease-out forwards;
 }
 
 .salindia.aktif {
@@ -149,20 +152,8 @@ body, html {
 }
 
 @keyframes munculHalus {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Tipografi Salindia */
-.judul-salindia {
-    font-size: 4rem;
-    color: var(--warna-utama);
-    margin-bottom: 1rem;
-}
-
-.deskripsi-salindia {
-    font-size: 1.5rem;
-    color: var(--teks-sekunder);
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .kop-salindia {
@@ -171,78 +162,65 @@ body, html {
     gap: 1rem;
 }
 
+/* Perbaikan Kapsul Indikator (Sekarang Terlihat) */
 .kapsul-indikator {
     background: var(--warna-utama);
     color: var(--putih-bersih);
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 .kapsul-level {
     background: #e2e8f0;
     color: var(--teks-primer);
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 700;
 }
 
 .kapsul-level.HOTS {
-    background: #fef08a;
-    color: #854d0e;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
 }
 
-.materi-salindia {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--teks-primer);
-}
+.judul-salindia { font-size: 4.5rem; color: var(--warna-utama); font-weight: 800; }
+.materi-salindia { font-size: 2.8rem; margin-bottom: 2rem; font-weight: 700; line-height: 1.2; }
 
-/* Grid Konten 2 Kolom */
+/* Grid Konten Presentasi */
 .grid-konten {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .kartu-info, .kartu-trik {
     background: var(--putih-bersih);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--bayangan-halus);
     border: 1px solid #f1f5f9;
 }
 
 .kartu-trik {
     background: #f0fdf4;
-    border-color: #bbf7d0;
+    border: 2px solid #bbf7d0;
 }
 
 .kartu-info h3, .kartu-trik h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
     color: var(--warna-utama);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.kartu-info p, .kartu-trik ul {
-    font-size: 1.15rem;
-    line-height: 1.7;
-}
-
-.kartu-trik ul {
-    padding-left: 1.5rem;
-}
-
-.kartu-trik li {
-    margin-bottom: 0.8rem;
-}
-
-.peringatan {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: #fee2e2;
-    border-radius: 8px;
-    color: #991b1b;
+.kartu-info p, .kartu-trik li {
+    font-size: 1.25rem;
+    line-height: 1.6;
 }
 
 /* --- KENDALI NAVIGASI BAWAH --- */
@@ -250,148 +228,33 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 2px solid #e2e8f0;
-}
-
-.tombol-menu {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--teks-sekunder);
-    font-weight: 600;
-    transition: color 0.2s;
-}
-
-.tombol-menu:hover {
-    color: var(--warna-utama);
-}
-
-.grup-navigasi {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
 }
 
 .tombol-arah {
     background: var(--putih-bersih);
-    border: 1px solid #cbd5e1;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--teks-primer);
-    transition: all 0.2s;
+    transition: var(--transisi);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .tombol-arah:hover {
-    background: #f8fafc;
-    border-color: var(--teks-sekunder);
+    background: var(--warna-utama);
+    color: var(--putih-bersih);
+    border-color: var(--warna-utama);
 }
 
 .penunjuk-halaman {
-    font-weight: 700;
-    color: var(--teks-sekunder);
-    font-variant-numeric: tabular-nums;
-}
-
-/* --- TAMPILAN KHUSUS HALAMAN PROFIL --- */
-.grid-profil {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-.kartu-foto {
-    text-align: center;
-    background: var(--putih-bersih);
-    padding: 3rem 2rem;
-    border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-}
-
-.bingkai-foto {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 2rem;
-    border: 5px solid var(--latar-utama);
-    box-shadow: 0 0 0 2px var(--aksen-warna);
-}
-
-.bingkai-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.nama-profil {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: var(--teks-primer);
-}
-
-.tagline-profil {
-    color: var(--aksen-warna);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.kontak-mini {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
     color: var(--teks-sekunder);
-    font-size: 0.95rem;
-}
-
-.ikon-kecil {
-    width: 18px;
-    height: 18px;
-}
-
-/* Detail Konten Kanan */
-.blok-info {
-    margin-bottom: 2.5rem;
-}
-
-.daftar-minimalis {
-    list-style: none;
-}
-
-.daftar-minimalis li {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.daftar-minimalis li::before {
-    content: "•";
-    color: var(--aksen-warna);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-.tahun {
-    color: var(--teks-sekunder);
-    font-size: 1rem;
-    font-weight: normal;
-}
-
-.kartu-motto {
-    margin-top: 3rem;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, var(--warna-utama), #075985);
-    border-radius: 16px;
-    color: var(--putih-bersih);
-    font-style: italic;
-    font-size: 1.2rem;
-    text-align: center;
+    letter-spacing: 2px;
 }
