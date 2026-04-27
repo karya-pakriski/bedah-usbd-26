@@ -1,5 +1,6 @@
 /* --- PENGATURAN GLOBAL & KUNCI LAYAR PENUH --- */
 :root {
+    --warna-utama: #1a5f7a;
     --latar-utama: #f8fafc; /* Abu-abu kebiruan sangat terang, bersih & sejuk */
     --teks-primer: #0f172a; /* Biru dongker pekat untuk keterbacaan tinggi */
     --teks-sekunder: #64748b;
