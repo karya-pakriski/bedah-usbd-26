@@ -304,59 +304,55 @@ body, html {
     align-items: start;
 }
 
-/* --- TAMPILAN FOTO TANPA BINGKAI (TRANSPARAN) --- */
+/* --- PENGATURAN FOTO PROPORSIONAL --- */
 .kartu-foto {
-    text-align: center;
-    background: transparent; /* Menghilangkan latar kartu agar foto menyatu */
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%; /* Mengisi penuh kolom kiri */
+    background: transparent;
 }
 
-.wadah-foto-bebas {
-    width: 100%;
-    max-width: 300px; /* Batas lebar agar tidak terlalu besar di layar */
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); /* Bayangan mengikuti bentuk tubuh/objek di foto */
+.wadah-foto-proporsional {
+    /* Mengunci tinggi foto maksimal 55% dari tinggi layar */
+    /* Ini memastikan foto cukup besar tapi tidak memicu scroll */
+    height: 55vh; 
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2rem;
 }
 
-.wadah-foto-bebas img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain; /* Memastikan seluruh bagian foto terlihat */
+.wadah-foto-proporsional img {
+    height: 100%; /* Mengikuti tinggi wadah */
+    width: auto;   /* Menjaga proporsi lebar agar tidak gepeng */
+    object-fit: contain;
+    /* Memberikan efek bayangan lembut sesuai siluet tubuh */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
 }
 
-/* Penyesuaian teks agar tetap elegan tanpa kartu latar */
+.identitas-visual {
+    text-align: center;
+}
+
 .nama-profil {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    margin-top: 1rem;
     color: var(--teks-primer);
+    margin-bottom: 0.5rem;
     line-height: 1.2;
 }
 
 .tagline-profil {
+    display: inline-block;
     background: var(--warna-utama);
     color: var(--putih-bersih);
-    padding: 0.4rem 1rem;
-    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
     font-weight: 600;
-    margin: 1rem 0;
-    display: inline-block;
-}
-.nama-profil {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: var(--teks-primer);
-}
-
-.tagline-profil {
-    color: var(--aksen-warna);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .kontak-mini {
