@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Fasilitator - USBD PAI DIY 2026</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya khusus untuk foto tanpa bingkai agar menyatu dengan latar */
+        .kartu-foto {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; /* Membuat foto seolah berdiri di atas navigasi */
+        }
+
+        .wadah-foto-transparan {
+            width: 100%;
+            max-width: 400px; /* Ukuran maksimal foto */
+            height: auto;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); /* Bayangan mengikuti siluet tubuh */
+        }
+
+        .wadah-foto-transparan img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .nama-profil {
+            font-size: 2.2rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .tagline-profil {
+            background: var(--warna-utama);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <main class="layar-presentasi">
@@ -12,14 +53,13 @@
             <div class="grid-profil">
                 
                 <div class="kartu-foto">
-<div class="bingkai-foto">
     <img src="https://lh3.googleusercontent.com/d/1e3uzSbtHQbtgvM9zruz4sOa9eGgR-4-C" alt="Ardika Riski Rahmawan, S.Pd.">
 </div>
                     <h1 class="nama-profil">Ardika Riski Rahmawan, S.Pd.</h1>
-                    <p class="tagline-profil">Guru PAI SD Negeri 1 GOdegan</p>
+                    <div class="tagline-profil">Guru PAI SD Negeri 1 Godegan</div>
                     
                     <div class="kontak-mini">
-                        <svg class="ikon-kecil" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="ikon-kecil" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"></path></svg>
                         <span>ardika.riski@gmail.com</span>
                     </div>
                 </div>
@@ -52,7 +92,7 @@
                     </section>
 
                     <div class="kartu-motto">
-                        <p>"..."</p>
+                        <p>"Mendedikasikan diri untuk pendidikan agama yang relevan dan mencerahkan."</p>
                     </div>
                 </div>
 
