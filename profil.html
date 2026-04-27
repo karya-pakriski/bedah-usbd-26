@@ -6,26 +6,28 @@
     <title>Profil Fasilitator - USBD PAI DIY 2026</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- KUSTOMISASI SPLIT SCREEN MODERN --- */
+        /* --- TATA LETAK DUA KOLOM (DARK SIDEBAR) --- */
         
-        .area-salindia {
-            padding: 0; /* Menghilangkan padding agar warna gelap penuh ke tepi kontainer */
+        .layar-presentasi {
+            height: 90vh;
+            padding: 0; /* Menghilangkan padding agar sidebar menempel */
             overflow: hidden;
-            border-radius: 24px;
             background: var(--putih-bersih);
-            box-shadow: var(--bayangan-tegas);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
         }
 
         .grid-profil {
             display: grid;
-            grid-template-columns: 40% 60%;
-            height: 100%;
-            width: 100%;
+            grid-template-columns: 35% 65%; /* Kolom kiri lebih ramping */
+            flex: 1;
+            min-height: 0;
         }
 
-        /* KOLOM KIRI (DARK) */
-        .kartu-identitas {
-            background: #0f172a; /* Warna Navy Gelap yang sangat profesional */
+        /* --- KOLOM KIRI (GELAP) --- */
+        .sidebar-gelap {
+            background-color: #0f172a; /* Biru dongker sangat gelap */
             color: white;
             display: flex;
             flex-direction: column;
@@ -35,52 +37,51 @@
             text-align: center;
         }
 
-        .wadah-foto-utama {
+        .wadah-foto-profil {
             width: 100%;
-            height: 50vh;
+            height: 45vh;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             margin-bottom: 2rem;
         }
 
-        .wadah-foto-utama img {
+        .wadah-foto-profil img {
             height: 100%;
             width: auto;
             object-fit: contain;
-            /* Efek bayangan putih lembut agar foto transparan lebih muncul di latar gelap */
-            filter: drop-shadow(0 15px 30px rgba(255,255,255,0.05));
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
         }
 
-        .nama-profil {
-            font-size: 2.1rem;
-            font-weight: 800;
-            color: #ffffff;
+        .nama-profil-kecil {
+            font-size: 1.6rem; /* Nama lebih kecil & proporsional */
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            color: white;
             line-height: 1.2;
         }
 
-        .label-jabatan {
-            background: var(--aksen-warna); /* Biru cerah sebagai aksen di latar gelap */
+        .label-jabatan-sidebar {
+            font-size: 0.9rem;
+            background: var(--aksen-warna);
             color: white;
-            padding: 0.4rem 1.2rem;
+            padding: 0.3rem 1rem;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 1rem;
             display: inline-block;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
-        .kontak-info {
+        .kontak-sidebar {
+            font-size: 0.85rem;
+            color: #94a3b8;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            color: #cbd5e1; /* Warna teks abu-abu terang agar kontras */
-            font-size: 0.95rem;
+            gap: 0.5rem;
         }
 
-        /* KOLOM KANAN (LIGHT) */
-        .detail-teks-profil {
+        /* --- KOLOM KANAN (TERANG) --- */
+        .konten-utama-profil {
             padding: 4rem;
             display: flex;
             flex-direction: column;
@@ -91,100 +92,80 @@
             margin-bottom: 2.5rem;
         }
 
-        .label-kategori {
-            color: var(--warna-utama);
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .list-profil {
-            list-style: none;
-        }
-
         .list-profil li {
             font-size: 1.2rem;
             margin-bottom: 0.8rem;
-            color: var(--teks-primer);
-            position: relative;
-            padding-left: 1.5rem;
         }
 
-        .list-profil li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--aksen-warna);
-            font-weight: bold;
+        /* --- NAVIGASI BAWAH --- */
+        .kendali-presentasi {
+            background: #f8fafc;
+            padding: 1.5rem 3rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 0;
         }
 
-        .tahun-label {
-            color: var(--teks-sekunder);
-            font-size: 1rem;
-            font-weight: 500;
+        .tombol-menu-home {
+            text-decoration: none;
+            color: var(--warna-utama);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
     </style>
 </head>
 <body>
     <main class="layar-presentasi">
-        <div class="area-salindia aktif">
-            <div class="grid-profil">
-                
-                <div class="kartu-identitas">
-                    <div class="wadah-foto-utama">
-                        <img src="https://lh3.googleusercontent.com/d/1e3uzSbtHQbtgvM9zruz4sOa9eGgR-4-C" alt="Ardika Riski Rahmawan, S.Pd.">
-                    </div>
-                    <div class="identitas-visual">
-                        <h1 class="nama-profil">Ardika Riski Rahmawan, S.Pd.</h1>
-                        <div class="label-jabatan">Guru PAI SD Negeri 1 Godegan</div>
-                        <div class="kontak-info">
-                            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z"></path></svg>
-                            <span>ardika.riski@gmail.com</span>
-                        </div>
+        <div class="grid-profil">
+            
+            <aside class="sidebar-gelap">
+                <div class="wadah-foto-profil">
+                    <img src="https://drive.google.com/thumbnail?id=1XVq_ELHkBfOUlBhQQlDQKQUp41ruYDDQ&sz=w1000" alt="Ardika Riski Rahmawan, S.Pd.">
+                </div>
+                <div class="identitas-sidebar">
+                    <h1 class="nama-profil-kecil">Ardika Riski Rahmawan, S.Pd.</h1>
+                    <div class="label-jabatan-sidebar">Guru PAI SDN 1 Godegan</div>
+                    <div class="kontak-sidebar">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span>ardika.riski@gmail.com</span>
                     </div>
                 </div>
+            </aside>
 
-                <div class="detail-teks-profil">
-                    <section class="blok-biografi">
-                        <span class="label-kategori">Unit Kerja</span>
-                        <ul class="list-profil">
-                            <li><strong>SD Negeri 1 Godegan</strong>, Srandakan <span class="tahun-label">(2021 - Sekarang)</span></li>
-                            <li><strong>SD Negeri Klagaran</strong>, Sanden <span class="tahun-label">(2019 - 2021)</span></li>
-                        </ul>
-                    </section>
-
-                    <section class="blok-biografi">
-                        <span class="label-kategori">Pengalaman Strategis</span>
-                        <ul class="list-profil">
-                            <li>Ketua Tim Pengembang Kurikulum SD Negeri 1 Godegan</li>
-                            <li>Tim Pengembang Kisi-Kisi dan Soal USBD PAI DIY</li>
-                        </ul>
-                    </section>
-
-                    <section class="blok-biografi">
-                        <span class="label-kategori">Organisasi & Amanah</span>
-                        <ul class="list-profil">
-                            <li><strong>Sekretaris 2</strong> KKG PAI Kabupaten Bantul <span class="tahun-label">(2025 - Sekarang)</span></li>
-                            <li><strong>Ketua</strong> KKG PAI Kapanewon Srandakan <span class="tahun-label">(2021 - Sekarang)</span></li>
-                            <li>Anggota Seksi Kegiatan dan Sosial KKG PAI Bantul <span class="tahun-label">(2021 - 2025)</span></li>
-                        </ul>
-                    </section>
+            <section class="konten-utama-profil">
+                <div class="blok-biografi">
+                    <div class="label-kategori">Unit Kerja</div>
+                    <ul class="list-profil">
+                        <li><strong>SD Negeri 1 Godegan</strong>, Srandakan <span class="tahun-label">(2021 - Sekarang)</span></li>
+                        <li><strong>SD Negeri Klagaran</strong>, Sanden <span class="tahun-label">(2019 - 2021)</span></li>
+                    </ul>
                 </div>
 
-            </div>
+                <div class="blok-biografi">
+                    <div class="label-kategori">Pengalaman Strategis</div>
+                    <ul class="list-profil">
+                        <li>Ketua Tim Pengembang Kurikulum SD Negeri 1 Godegan</li>
+                        <li>Tim Pengembang Kisi-Kisi dan Soal USBD PAI DIY</li>
+                    </ul>
+                </div>
+
+                <div class="blok-biografi">
+                    <div class="label-kategori">Organisasi & Amanah</div>
+                    <ul class="list-profil">
+                        <li><strong>Sekretaris 2</strong> KKG PAI Kabupaten Bantul <span class="tahun-label">(2025 - Sekarang)</span></li>
+                        <li><strong>Ketua</strong> KKG PAI Kapanewon Srandakan <span class="tahun-label">(2021 - Sekarang)</span></li>
+                        <li>Anggota Seksi Kegiatan dan Sosial KKG PAI Bantul <span class="tahun-label">(2021 - 2025)</span></li>
+                    </ul>
+                </div>
+            </section>
         </div>
 
         <nav class="kendali-presentasi">
-            <a href="index.html" class="tombol-menu">
+            <a href="index.html" class="tombol-menu-home">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 Kembali ke Menu Utama
             </a>
-            <div class="grup-navigasi" style="visibility: hidden;">
-                <button class="tombol-arah">Selanjutnya</button>
-            </div>
         </nav>
     </main>
 </body>
