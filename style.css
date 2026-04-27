@@ -129,3 +129,169 @@ body, html {
     font-size: 1rem;
     color: var(--teks-sekunder);
 }
+/* --- TATA LETAK SALINDIA PRESENTASI --- */
+.area-salindia {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.salindia {
+    display: none;
+    width: 100%;
+    animation: munculHalus 0.4s ease-out forwards;
+}
+
+.salindia.aktif {
+    display: block;
+}
+
+@keyframes munculHalus {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tipografi Salindia */
+.judul-salindia {
+    font-size: 4rem;
+    color: var(--warna-utama);
+    margin-bottom: 1rem;
+}
+
+.deskripsi-salindia {
+    font-size: 1.5rem;
+    color: var(--teks-sekunder);
+}
+
+.kop-salindia {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.kapsul-indikator {
+    background: var(--warna-utama);
+    color: var(--putih-bersih);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.kapsul-level {
+    background: #e2e8f0;
+    color: var(--teks-primer);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.kapsul-level.HOTS {
+    background: #fef08a;
+    color: #854d0e;
+}
+
+.materi-salindia {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--teks-primer);
+}
+
+/* Grid Konten 2 Kolom */
+.grid-konten {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+}
+
+.kartu-info, .kartu-trik {
+    background: var(--putih-bersih);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #f1f5f9;
+}
+
+.kartu-trik {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.kartu-info h3, .kartu-trik h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--warna-utama);
+}
+
+.kartu-info p, .kartu-trik ul {
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.kartu-trik ul {
+    padding-left: 1.5rem;
+}
+
+.kartu-trik li {
+    margin-bottom: 0.8rem;
+}
+
+.peringatan {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fee2e2;
+    border-radius: 8px;
+    color: #991b1b;
+}
+
+/* --- KENDALI NAVIGASI BAWAH --- */
+.kendali-presentasi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.tombol-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--teks-sekunder);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.tombol-menu:hover {
+    color: var(--warna-utama);
+}
+
+.grup-navigasi {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.tombol-arah {
+    background: var(--putih-bersih);
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--teks-primer);
+    transition: all 0.2s;
+}
+
+.tombol-arah:hover {
+    background: #f8fafc;
+    border-color: var(--teks-sekunder);
+}
+
+.penunjuk-halaman {
+    font-weight: 700;
+    color: var(--teks-sekunder);
+    font-variant-numeric: tabular-nums;
+}
